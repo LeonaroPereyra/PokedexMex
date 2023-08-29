@@ -2,11 +2,13 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.devtools.ksp'
+    id 'com.google.dagger.hilt.android'
 }
 
 ext.kotlin_corutines = '1.7.3'
 ext.kotlin_navigation = '2.7.1'
 ext.room_version ='2.5.2'
+ext.hint_version = '2.44'
 
 android {
     namespace 'com.devf.pokedexmex'
@@ -78,5 +80,8 @@ dependencies {
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
     ksp "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
-
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation "com.google.dagger:hilt-android:$hint_version"
+    ksp  "com.google.dagger:hilt-compiler:$hint_version"
 }
